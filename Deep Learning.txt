@@ -1,0 +1,32 @@
+Good morning everyone,
+
+Today, I would like to talk about deep learning
+
+Deep learning is a type of artificial intelligence that allows computers to learn from large amounts of data, much like humans learn from experience. It uses structures called neural networks, which are inspired by the way the human brain processes information.
+
+Think of it like teaching a child to recognize a cat. Instead of giving a long list of rules, you show the child many pictures of cats. Over time, the child begins to recognize cats on their own. Deep learning works in a similar way. By analyzing thousands or even millions of examples, it learns patterns and becomes better at making decisions or predictions.
+
+Deep learning is used in many parts of our daily lives. For example:
+
+* Streaming services recommend movies and songs based on what we enjoy.
+* Email services detect spam messages automatically.
+* Self-driving cars use deep learning to recognize roads, traffic signs, and pedestrians.
+* Doctors use it to help detect diseases from medical images, such as X-rays and MRI scans.
+
+Now that we know what deep learning is, let's understand how it actually works.
+
+Deep learning starts by taking input data, which could be numbers, images, text, or even speech. For example, if we want a computer to predict whether a student will pass an exam, the inputs might be the number of hours the student studied and their attendance percentage. Each input is connected to a neuron through a weight. A weight represents the importance of that input. If studying has a higher weight than attendance, it means the model believes studying has a greater influence on the final result.
+
+Next, the network adds a bias, which acts like an extra adjustment. You can think of bias as giving the model a small head start or helping it make better decisions even when the input values are low. After adding the weighted inputs and the bias together, the result is passed through an activation function. This function decides whether the neuron should pass the information to the next layer. For example, the ReLU activation function changes all negative values to zero and keeps positive values unchanged, helping the network focus on useful information.
+
+The network then makes a prediction. If it predicts that the student will pass but the actual result is that the student failed, the prediction is incorrect. The model calculates this mistake using a loss function, which measures how far the prediction is from the correct answer. It then uses a process called backpropagation to identify which weights and biases caused the error. These values are adjusted slightly so that the next prediction becomes more accurate.
+
+This entire process is repeated thousands or even millions of times with different examples. With each repetition, the model learns from its mistakes, improves its weights and biases, and becomes better at making accurate predictions.
+
+One of the biggest advantages of deep learning is its ability to improve with more data. It can solve complex problems that are difficult to program using traditional methods. However, it also has some challenges. It requires a large amount of data, powerful computers, and a lot of time to train. In addition, it is important to use deep learning responsibly to protect privacy, reduce bias, and ensure fairness.
+
+As technology continues to advance, deep learning is expected to play an even greater role in fields such as healthcare, education, transportation, business, and scientific research. It has the potential to improve lives by making systems smarter, faster, and more accurate.
+
+Thank you for your time and attention. I hope this speech has given you a clear understanding of what deep learning is and why it is so important in today's world.
+
+
