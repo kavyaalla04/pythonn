@@ -1,0 +1,521 @@
+# Document Intelligence & Audio Briefing Platform
+
+## Features & Innovations
+
+### 1. Multi-Format Document Ingestion
+
+Support PDF, DOCX, PPTX, XLSX, TXT, YAML, JSON, etc images/scanned documents, and other practical document formats through a unified ingestion pipeline.
+
+### 2. Intelligent Document Cleaning
+
+Clean extracted content by removing duplicate headers/footers, page numbers, broken text, OCR noise, unnecessary whitespace, and other extraction artifacts while preserving meaningful information.
+
+### 3. Structure-Aware Document Understanding
+
+Preserve document structure such as pages, headings, sections, subsections, paragraphs, tables, images, captions, and references instead of treating the document as plain text.
+
+### 4. OCR & Extraction Fallbacks
+
+Use fallback extraction/OCR mechanisms when normal text extraction fails, allowing scanned or poorly formatted documents to still be processed, and also we need a fallback for when open router API keys not working coz we will test by shutting it down.
+
+### 5. Large-Document / 10K+ Page Processing
+
+Design the system to process extremely large documents through hierarchical processing instead of sending the entire document to an LLM at once.
+
+### 6. Context-Aware Semantic Chunking
+
+Create chunks based on document structure and semantic boundaries rather than blindly splitting every fixed number of tokens, helping preserve context across long documents.
+
+### 7. Hierarchical Retrieval
+
+Retrieve information at multiple levels — document, section, subsection, chunk, and sentence/evidence level — to improve contextual understanding and source retrieval.
+
+### 8. Intelligent Knowledge Base / Vector Search
+
+Create searchable embeddings and a vector index so relevant information can be retrieved efficiently from large documents.
+
+### 9. Multi-Agent Document Intelligence
+
+Use specialized agents for document analysis, summarization, validation, and quality evaluation, with controlled handoffs between stages.
+
+### 10. Evidence-Grounded Summarization
+
+Ensure important summary statements are directly connected to supporting content from the original document.
+
+### 11. Claim-Level Validation
+
+Break important summary claims into individual units and verify whether each claim is supported, partially supported, or unsupported by the source.
+
+### 12. Hallucination Detection & Regeneration
+
+Automatically detect unsupported or inconsistent claims and trigger regeneration or correction before the result reaches the user.
+
+### 13. Source/Page-Level Citations
+
+Every important finding can point back to the relevant page, section, or source passage so users can verify the information themselves.
+
+### 14. Explainable Summary Results
+
+Allow users to understand why a particular statement appeared in the summary by showing its supporting evidence, source location, validation result, and confidence.
+
+### 15. Adaptive Summary Length
+
+Provide Short, Medium, and Long summary modes so users can control the level of detail they need.
+
+### 16. Focus-Based Summarization
+
+Allow users to generate summaries focused specifically on risks, decisions, recommendations, key findings, action items, technical information, or a custom topic.
+
+### 17. Custom Summary Instructions
+
+Allow users to provide their own instructions such as “Focus only on cybersecurity risks and financial impact.”
+
+### 18. Configurable LLM Parameters
+
+Expose configurable parameters such as temperature, maximum tokens, model selection, and other generation controls where appropriate.
+
+### 19. English-First Reasoning Pipeline
+
+Perform the core analysis, summarization, and validation through a consistent English internal representation before generating the requested output language.
+
+### 20. Multilingual Summary Generation
+
+Allow users to select a target language and generate the validated summary in languages such as Hindi, Spanish, French, German, etc.
+
+### 21. Multilingual Voice Generation
+
+Convert the final validated summary into speech in the user's selected language.
+
+### 22. Intelligent Audio Briefings
+
+Generate structured audio briefings containing sections such as introduction, key findings, risks, recommendations, and action items instead of simply reading raw text aloud.
+
+### 23. Document Q&A
+
+Allow users to ask questions about an uploaded document and receive source-grounded answers with supporting references.
+
+### 24. Multimodal Document Understanding
+
+Extend document understanding beyond text to include tables, charts, images, captions, and other visual information contained within documents.
+
+### 25. Document Comparison
+
+Allow users to upload multiple documents and identify differences in findings, risks, numbers, decisions, recommendations, and other important information.
+
+### 26. Document Version Tracking
+
+Compare different versions of the same document and identify what was added, removed, or changed between versions.
+
+### 27. Enterprise Evaluation Dashboard
+
+Provide a dedicated evaluation page showing metrics such as relevance, completeness, factual consistency, groundedness, summary quality, and validation accuracy.
+
+### 28. Offline Benchmark Evaluation
+
+Evaluate the system against benchmark datasets such as GovReport using reference summaries and measurable summarization/evaluation metrics.
+
+### 29. Runtime Quality Evaluation
+
+Evaluate each generated summary dynamically using validation and quality agents to determine whether the specific output is reliable.
+
+### 30. Claim Validation Analytics
+
+Show how many claims were supported, partially supported, or unsupported, providing a transparent view of summary reliability.
+
+### 31. Processing & Performance Analytics
+
+Track document size, page count, chunks created, processing time, model used, token usage, latency, and other useful system metrics.
+
+### 32. User Feedback Loop
+
+Allow users to rate the usefulness and quality of summaries/audio and use feedback as an additional evaluation signal.
+
+### 33. LLM Provider Abstraction
+
+Keep agents independent from a specific LLM provider through a centralized LLM service/provider layer.
+
+### 34. Automatic LLM Fallback
+
+If the primary provider/API fails, automatically retry or switch to a configured fallback provider without breaking the overall workflow.
+
+### 35. API-Key Failure Resilience
+
+Design the system so that disabling or removing a primary API key does not require rewriting the application; another configured provider can take over.
+
+### 36. Intelligent Model Routing
+
+Route different tasks to appropriate models/providers based on task requirements, complexity, cost, or availability.
+
+### 37. Fault-Tolerant Workflow
+
+Use retries, fallbacks, error handling, and stage-level recovery so one failed component does not require restarting the entire document-processing pipeline.
+
+### 38. Cloud Document Storage
+
+Allow documents and generated outputs to be stored in cloud storage so users can upload and access documents from different environments.
+
+### 39. Cloud-Ready Architecture
+
+Design the application so the same system can operate locally or be deployed to cloud infrastructure.
+
+### 40. Dockerized Deployment
+
+Containerize the application and its services so the project can be consistently deployed across local, testing, and cloud environments.
+
+### 41. Scalable Processing Architecture
+
+Separate API requests from heavy document-processing workloads so large documents can be processed asynchronously and scaled independently.
+
+### 42. Caching
+
+Cache reusable results such as extracted content, embeddings, or intermediate processing results to reduce unnecessary computation and API costs.
+
+### 43. Observability & Logging
+
+Track agent execution, provider failures, processing time, errors, token usage, and workflow status for debugging and production monitoring.
+
+### 44. Processing Pipeline Visualization
+
+Show users the live processing stages — Upload → Extract → Clean → Analyze → Summarize → Validate → Evaluate → Generate Audio.
+
+### 45. Modern Interactive UI
+
+Create a polished, intuitive interface rather than a basic upload-and-text-output page, with clear navigation and visual feedback.
+
+### 46. Three.js / Interactive Visual Experience
+
+Use Three.js selectively for an interactive document/AI visualization or processing experience while keeping the core interface practical and easy to use.
+
+### 47. Evidence Explorer
+
+Provide an interface where users can click a summary claim and immediately inspect the supporting source passage and page and highlight it.
+
+### 48. Summary Export
+
+Allow users to export generated summaries and structured information into useful formats such as PDF, Markdown, JSON, or other appropriate formats.
+
+### 49. Audio Controls
+
+Provide controls such as language, voice, playback speed, summary length, and selected sections for generated audio.
+
+### 50. Enterprise-Ready Architecture
+
+Keep the system modular, configurable, observable, fault-tolerant, cloud-ready, and provider-independent so it can move beyond a demonstration toward real enterprise deployment.
+
+### 51. MongoDB Conversation Persistence
+
+Store user conversations, document references, questions, answers, summary preferences, feedback, timestamps, and session information in MongoDB.
+
+### 52. Automatic Chat Expiry / Data Retention
+
+Use MongoDB TTL indexes to automatically delete chat records after a configurable retention period, such as 30 days, while also providing manual delete functionality.
+
+### 53. Global Chat & Document Search
+
+Allow users to search across previous conversations, document names, questions, generated summaries, and extracted content using keywords and filters.
+
+### 54. Personalized Information Prioritization
+
+Allow users to specify what matters most to them. Different users can receive different summaries from the same document based on priorities such as finance, HR, risks, technical details, decisions, or recommendations.
+
+### 55. User Intent & Importance Profiling
+
+Convert user instructions into importance weights or retrieval priorities so the system can intentionally emphasize information relevant to the user's objective.
+
+### 56. Context-Aware Ambiguity Detection
+
+Detect ambiguous terms such as “policy,” “risk,” “benefits,” or “strategy” and determine their meaning from surrounding document context instead of interpreting them in isolation.
+
+### 57. Intelligent Context Expansion
+
+Before summarizing an important chunk, retrieve surrounding paragraphs, related sections, and semantically related chunks when additional context is required to correctly understand the meaning.
+
+### 58. Context Clarification Questions
+
+When the system detects multiple plausible interpretations, ask the user for clarification before producing a potentially incorrect summary.
+
+### 59. Document Cleaning Observatory
+
+Provide a visible cleaning report showing detected and corrected headers, footers, page numbers, duplicate content, OCR artifacts, broken paragraphs, whitespace issues, and extraction noise.
+
+### 60. Before/After Cleaning Viewer
+
+Allow users to compare raw extracted content with cleaned content to demonstrate exactly how document preprocessing improves downstream understanding.
+
+### 61. Document Robustness / Stress-Test Mode
+
+Provide a dedicated evaluation mode for testing poor-quality documents such as badly scanned PDFs, OCR-heavy documents, rotated pages, multi-column layouts, duplicated content, broken formatting, and noisy extraction.
+
+### 62. Worst-Case Document Benchmark
+
+Maintain a collection of intentionally difficult documents and evaluate extraction, cleaning, retrieval, summarization, validation, and overall performance against them.
+
+### 63. DeepEval Quality Center
+
+Create a dedicated evaluation dashboard for relevance, completeness, faithfulness, groundedness, context precision, context recall, summary quality, and validation performance.
+
+### 64. Claim-Level Evaluation Dashboard
+
+Show the number of supported, partially supported, and unsupported claims generated by the system and provide evidence for each claim.
+
+### 65. Reference-Based Evaluation
+
+Compare generated summaries against human/reference summaries using an evaluation dataset such as GovReport and report appropriate quality metrics.
+
+### 66. Custom Document Intelligence Evaluation Dataset
+
+Create a project-specific dataset containing finance, HR, legal, technical, policy, business, multilingual, ambiguous-context, noisy-OCR, and long-document samples with expected facts, risks, recommendations, context, and reference summaries.
+
+### 67. K-Means Topic Discovery
+
+Use embeddings with K-Means clustering to group semantically similar document chunks into discovered topics such as Finance, HR, Risk, Operations, Compliance, or Recommendations.
+
+### 68. Cluster Visualization
+
+Visualize discovered document topics and show how document sections/chunks are distributed across semantic clusters.
+
+### 69. Cosine Similarity Analytics
+
+Use cosine similarity for semantic retrieval, duplicate detection, related-content discovery, evidence matching, and similarity analysis between user queries and document chunks.
+
+### 70. Retrieval Quality Analytics
+
+Display retrieval statistics such as top-K results, similarity scores, context precision, context recall, and retrieved source sections.
+
+### 71. Configurable Temperature
+
+Allow authorized users to configure LLM temperature while providing sensible defaults for factual document processing.
+
+### 72. Configurable Maximum Tokens
+
+Allow users or administrators to configure maximum output tokens according to summary type, document complexity, and selected model.
+
+### 73. LLM Provider Abstraction
+
+Keep the application independent of a single LLM provider through a centralized provider interface.
+
+### 74. Automatic LLM Provider Fallback
+
+Automatically switch to a configured fallback provider or model when the primary API fails, reaches limits, becomes unavailable, or encounters an authentication problem.
+
+### 75. Model Routing
+
+Route different tasks to appropriate models based on complexity, cost, latency, or task type, such as extraction, summarization, validation, translation, and evaluation.
+
+### 76. Voice Prompt Input
+
+Allow users to speak questions or instructions using a microphone and convert speech to text before sending the request to the document intelligence system.
+
+### 77. Voice-Based Document Q&A
+
+Allow users to ask questions about uploaded documents entirely through voice input and receive grounded answers with source references.
+
+### 78. Multilingual Quality Evaluation
+
+Evaluate multilingual summaries for semantic preservation, important-fact preservation, entity preservation, numerical accuracy, and overall meaning preservation.
+
+### 79. Multilingual Context Preservation
+
+Ensure that domain-specific meanings and contextual distinctions are preserved when translating summaries into another language.
+
+### 80. Evidence Explorer
+
+Allow users to click a summary claim and immediately view the supporting document page, section, paragraph, or source passage.
+
+### 81. “Why This Finding?” Explainability
+
+Show why a finding was prioritized, including user-selected focus, retrieval relevance, repeated mentions, semantic importance, and supporting evidence.
+
+### 82. Hallucination Challenge Mode
+
+Test generated claims against source evidence and identify unsupported statements before they reach the final summary or audio pipeline.
+
+### 83. Automatic Unsupported-Claim Regeneration
+
+If a validation stage identifies unsupported or inconsistent claims, automatically regenerate or revise the affected portion using stronger source evidence.
+
+### 84. Agent Execution Trace
+
+Provide a safe operational view of the multi-agent workflow showing which stages completed, failed, retried, regenerated, or required fallback.
+
+### 85. Processing Pipeline Visualization
+
+Visually show:
+Document Upload → Extraction → Cleaning → Structure Analysis → Chunking → Retrieval → Analysis → Summarization → Validation → Evaluation → Translation → TTS.
+
+### 86. Document Chat Workspace
+
+Provide persistent document-specific conversations where users can ask follow-up questions and continue exploring the same document.
+
+### 87. Conversation Timeline
+
+Display previous questions, generated responses, documents used, timestamps, and major actions in chronological order.
+
+### 88. Smart Data Retention Controls
+
+Allow configurable retention periods for chat history and other non-permanent application data, with automatic expiry and manual deletion.
+
+### 89. Document Version Comparison
+
+Allow users to upload multiple versions of a document and identify changed findings, risks, decisions, recommendations, policies, numbers, and sections.
+
+### 90. Change-Focused Summarization
+
+Generate summaries containing only what changed between two document versions.
+
+### 91. Document Relationship View
+
+Show relationships between documents, versions, topics, risks, decisions, recommendations, and supporting evidence.
+
+### 92. Multimodal Document Understanding
+
+Process meaningful information from text, tables, charts, images, captions, and other supported visual document elements.
+
+### 93. Demo Dataset Loader
+
+Provide a “Load Demo Data” option that automatically loads representative HR, financial, technical, multilingual, ambiguous-context, noisy-document, and long-document samples for demonstrations.
+
+### 94. One-Click Evaluation Dataset Runner
+
+Allow users to run the complete evaluation pipeline against the project's sample dataset and generate a consolidated evaluation report.
+
+### 95. Quality Report Export
+
+Allow evaluation results, claim validation results, cleaning statistics, retrieval metrics, and processing statistics to be exported as a structured report.
+
+### 96. Processing Statistics Dashboard
+
+Track document size, page count, chunks created, extraction time, cleaning operations, embedding time, retrieval latency, LLM usage, token usage, validation time, and TTS generation time.
+
+### 97. Failure & Recovery Dashboard
+
+Show failures and recovery actions such as extraction fallback, OCR fallback, LLM retry, provider switching, retrieval retry, validation regeneration, and TTS fallback.
+
+### 98. Advanced Configuration Center
+
+Centralize configurable settings including summary length, focus, language, model, temperature, maximum tokens, retrieval parameters, retention period, TTS voice, and audio speed.
+
+### 99. Enterprise-Quality UI/UX
+
+Build a clean, practical, responsive interface with clear navigation, minimal visual clutter, strong information hierarchy, accessible controls, loading states, errors, progress indicators, and consistent interaction patterns.
+
+### 100. Interactive Three.js Experience
+
+Use Three.js selectively for high-value visualizations such as document processing flow, semantic clusters, document relationships, or knowledge exploration without making the interface unnecessarily complicated.
+
+### 101. Interactive Evidence Visualization
+
+Connect summary claims to their evidence using an interactive visual relationship between claim → source section → supporting passage → validation result.
+
+### 102. Professional README & Developer Documentation
+
+Provide a complete README containing:
+
+* Project overview
+* What the system does
+* Core features
+* Architecture
+* Technology stack
+* Project structure
+* Supported file formats
+* Environment variables
+* Installation
+* Local setup
+* Docker setup
+* MongoDB setup
+* Vector database setup
+* LLM configuration
+* TTS configuration
+* How to upload documents
+* How to generate summaries
+* How to use document chat
+* How to use voice input
+* How to generate audio
+* How to run evaluation
+* How to load the sample dataset
+* How to run tests
+* API documentation
+* Troubleshooting
+* Fallback behavior
+* Configuration options
+
+### 103. Quick Start Documentation
+
+Provide a short setup section showing the minimum commands required to clone, configure, build, and run the complete application.
+
+### 104. Step-by-Step User Guide
+
+Document the complete user workflow:
+Upload → Configure → Process → View Summary → Explore Evidence → Ask Questions → Use Voice → Translate → Generate Audio → Evaluate → Export.
+
+### 105. API Documentation
+
+Document backend endpoints, request/response schemas, authentication/configuration requirements, error responses, and example API usage.
+
+### 106. Reproducible Demo Environment
+
+Provide Docker configuration, environment templates, sample documents, sample dataset, configuration examples, and startup instructions so the project can be demonstrated consistently on another machine.
+
+### 107. Intelligent Demo Mode
+
+Provide a presentation-friendly mode that loads a prepared difficult document and walks through extraction, cleaning, retrieval, summarization, validation, evaluation, and audio generation.
+
+### 108. Context-Aware Personalization Demo
+
+Demonstrate how two users can provide different priorities for the same document and receive different information emphasis while remaining grounded in the same source.
+
+### 109. Document Quality Score
+
+Generate an overall document-quality assessment based on extraction quality, OCR quality, structure recovery, cleaning quality, retrieval quality, and evidence availability.
+
+### 110. End-to-End Quality Scorecard
+
+Provide a consolidated scorecard covering:
+Extraction → Cleaning → Retrieval → Summarization → Groundedness → Validation → Translation → TTS → Overall Quality.
+
+### 111. Explainable Retrieval
+
+For each retrieved chunk, show why it was selected using semantic similarity, document structure, user intent, and contextual relevance.
+
+### 112. Duplicate & Near-Duplicate Detection
+
+Detect repeated or highly similar paragraphs, pages, and chunks before indexing to reduce redundant retrieval and summarization.
+
+### 113. Semantic Document Map
+
+Create a structured representation of the document containing sections, topics, entities, risks, decisions, recommendations, and relationships between them.
+
+### 114. Smart Follow-Up Suggestions
+
+After generating a summary, suggest useful grounded questions such as:
+
+* What are the major risks?
+* What decisions were made?
+* What changed?
+* What recommendations were given?
+* What are the financial implications?
+* Which sections support this conclusion?
+
+### 115. Feedback-Driven Improvement
+
+Allow users to mark summaries or answers as useful/not useful and capture feedback for evaluation and future system improvement.
+
+### 116. Production Readiness Monitoring
+
+Monitor service health, processing failures, model availability, latency, resource usage, provider availability, and workflow success rates.
+
+### 117. Privacy-Aware Document Processing
+
+Provide clear controls for document deletion, conversation expiry, retention settings, and separation of temporary processing data from persistent metadata.
+
+### 118. Modular Microservice Architecture
+
+Keep ingestion, processing, retrieval, agents, evaluation, translation, TTS, chat, and storage components modular so individual services can be replaced or scaled independently.
+
+### 119. Cloud-Ready Storage & Processing
+
+Support cloud document storage and asynchronous processing while maintaining the same core workflow used during local development.
+
+### 120. End-to-End Enterprise Document Intelligence Platform
+
+Combine ingestion, cleaning, context understanding, semantic retrieval, personalized summarization, multi-agent validation, evaluation, multilingual processing, voice interaction, persistent conversations, evidence exploration, analytics, and audio generation into one unified document intelligence platform.
